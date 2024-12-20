@@ -52,7 +52,7 @@ abstract class CompileDexTask : DefaultTask() {
                         .also { closer.register(it) },
                     desugarClasspath = ClassFileProviderFactory(listOf<Path>()).also { closer.register(it) },
                     coreLibDesugarConfig = null,
-                    coreLibDesugarOutputKeepRuleFile = project.file("desugar-keep-rules.pro")
+                    coreLibDesugarOutputKeepRuleFile = project.file("desugar-keep-rules.pro"),
                     messageReceiver = MessageReceiverImpl(
                         ErrorFormatMode.HUMAN_READABLE,
                         LoggerFactory.getLogger(CompileDexTask::class.java)
