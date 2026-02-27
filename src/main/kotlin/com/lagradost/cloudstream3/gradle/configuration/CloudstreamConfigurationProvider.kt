@@ -28,8 +28,8 @@ class CloudstreamConfigurationProvider : IConfigurationProvider {
         if (!apkinfo.jarFile.exists()) {
             project.logger.lifecycle("Fetching JAR")
 
-            val url = URI("https://gitlab.com/tearrs/nsfw/-/raw/main/classes.jar?ref_type=heads&inline=false").toURL()
-            // val url = URI("${apkinfo.urlPrefix}/classes.jar").toURL()
+            // val url = URI("https://gitlab.com/tearrs/nsfw/-/raw/main/classes.jar?ref_type=heads&inline=false").toURL()
+            val url = URI("${apkinfo.urlPrefix}/classes.jar").toURL()
             url.download(apkinfo.jarFile, createProgressLogger(project, "Download JAR"))
         }
 
